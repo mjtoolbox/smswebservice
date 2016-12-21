@@ -6,6 +6,7 @@ import org.springframework.dao.DataAccessException;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.ResultSetExtractor;
 import org.springframework.jdbc.core.RowMapper;
+import org.springframework.stereotype.Repository;
 import org.springframework.stereotype.Service;
 
 import javax.sql.DataSource;
@@ -18,6 +19,7 @@ import java.util.List;
  * Created by mijo on 2016-07-05.
  */
 @Service
+@Repository
 public class StudentService {
 
 //    private static List<Student> students = new ArrayList<Student>();
