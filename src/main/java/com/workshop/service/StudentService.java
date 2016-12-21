@@ -8,6 +8,7 @@ import org.springframework.jdbc.core.ResultSetExtractor;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Service;
 
+import javax.sql.DataSource;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.Collections;
@@ -32,8 +33,12 @@ public class StudentService {
 //        students.add(new Student(1007, "Debbie", 28));
     }
 
-    @Autowired
     private JdbcTemplate jdbcTemplate;
+
+    @Autowired
+    public void setDataSource(DataSource dataSource){
+        jdbcTemplate = new JdbcTemplate(dataSource);
+    }
 
     public List<Student> findAll() {
         String sql = "SELECT * FROM `acsm_728bf0f8fa73974`.`student`";
